@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "aliign.gravitysword.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"ItemMixin",
+		"PlayerEntityMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

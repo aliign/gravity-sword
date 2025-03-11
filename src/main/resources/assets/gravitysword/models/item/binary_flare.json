@@ -1,0 +1,38 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "gravitysword:item/binary_flare_dual"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "gravitysword:charges": 0.0
+      },
+      "model": "gravitysword:item/binary_flare_handle"
+    },
+    {
+      "predicate": {
+        "gravitysword:charges": 0.25
+      },
+      "model": "gravitysword:item/binary_flare_steam"
+    },
+    {
+      "predicate": {
+        "gravitysword:charges": 0.5
+      },
+      "model": "gravitysword:item/binary_flare_fire"
+    },
+    {
+      "predicate": {
+        "gravitysword:charges": 0.75
+      },
+      "model": "gravitysword:item/binary_flare_soul"
+    },
+    {
+      "predicate": {
+        "gravitysword:charges": 1.0
+      },
+      "model": "gravitysword:item/binary_flare_dual"
+    }
+  ]
+}

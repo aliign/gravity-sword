@@ -1,0 +1,20 @@
+{
+  "binary_flare_charge": {
+    "subtitle": "sounds.gravitysword.binary_flare_charge",
+    "sounds": [
+      "gravitysword:binary_flare_charge"
+    ]
+  },
+  "binary_flare_activate": {
+    "subtitle": "sounds.gravitysword.binary_flare_activate",
+    "sounds": [
+      "gravitysword:binary_flare_activate"
+    ]
+  },
+  "binary_flare_waste": {
+    "subtitle": "sounds.gravitysword.binary_flare_waste",
+    "sounds": [
+      "gravitysword:binary_flare_waste"
+    ]
+  }
+}
