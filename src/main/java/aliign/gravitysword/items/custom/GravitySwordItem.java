@@ -164,7 +164,7 @@ public class GravitySwordItem extends SwordItem {
                     .formatted(Formatting.DARK_GREEN));
         } else {
             tooltip.add(Text.translatable("attribute.modifier.equals.0",
-                            " " + ItemStack.MODIFIER_FORMAT.format(getDamageFromCharges(GetCharges(stack))),
+                            " " + ItemStack.MODIFIER_FORMAT.format(getDamageFromCharges(GetCharges(stack)) + 1),
                             Text.translatable("attribute.name.generic.attack_damage"))
                     .formatted(Formatting.DARK_GREEN));
         }
