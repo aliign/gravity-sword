@@ -70,9 +70,9 @@ public class GravitySwordItem extends SwordItem {
         int charges = i + GetCharges(stack);
         if (charges > max_charges) {
             charges = max_charges;
-            player.playSound(ModSounds.BINARY_FLARE_WASTE, SoundCategory.PLAYERS, 1.0F, (float) (0.9 + Math.random() * (0.2)));
+            player.playSound(ModSounds.BINARY_FLARE_WASTE, SoundCategory.PLAYERS, 1.5F, (float) (0.9 + Math.random() * (0.2)));
         } else {
-            player.playSound(ModSounds.BINARY_FLARE_CHARGE, SoundCategory.PLAYERS, 0.5F, (float) (0.9 + Math.random() * (0.2)));
+            player.playSound(ModSounds.BINARY_FLARE_CHARGE, SoundCategory.PLAYERS, 2.0F, (float) (0.9 + Math.random() * (0.2)));
         }
         SetCharges(stack, charges);
     }
@@ -82,7 +82,7 @@ public class GravitySwordItem extends SwordItem {
         if (charges < min_charges) {
             charges = min_charges;
         }
-        player.playSound(ModSounds.BINARY_FLARE_ACTIVATE, SoundCategory.PLAYERS, 0.15F, (float) (0.9 + Math.random() * (0.2)));
+        player.playSound(ModSounds.BINARY_FLARE_ACTIVATE, SoundCategory.PLAYERS, 0.3F, (float) (0.9 + Math.random() * (0.2)));
         SetCharges(stack, charges);
     }
 
