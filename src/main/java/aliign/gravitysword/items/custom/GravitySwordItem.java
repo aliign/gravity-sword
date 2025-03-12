@@ -33,13 +33,13 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 import java.util.UUID;
 
 public class GravitySwordItem extends SwordItem {
     public GravitySwordItem(SwordItem.Settings settings) {
-        super(ToolMaterials.NETHERITE, 0, -2.6F, settings);
+        super(ToolMaterials.NETHERITE, 0, -2.6F, settings.fireproof());
+
+
     }
 
     protected static final UUID ATTACK_MODIFIER_ID = UUID.fromString("4782863a-ebb6-402b-845a-e6aa7c49b4f6");
@@ -115,6 +115,7 @@ public class GravitySwordItem extends SwordItem {
             }
             applyAttributeModifiers(stack, attacker, Hand.MAIN_HAND);
         }
+        stack.damage(1, attacker, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
         return true;
     }
 
@@ -126,12 +127,14 @@ public class GravitySwordItem extends SwordItem {
                 if (GravityChangerAPI.getGravityDirection(user) != Direction.DOWN) {
                     SetPlayerActive(user, false);
                     DecreaseCharges(user.getStackInHand(hand), user, 0);
+                    stack.damage(1, user, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
                     return TypedActionResult.success(user.getStackInHand(hand));
                 }
                 if (GetCharges(user.getStackInHand(hand)) > 0) {
                     SetPlayerActive(user, true);
                     DecreaseCharges(user.getStackInHand(hand), user, 1);
                     applyAttributeModifiers(stack, user, hand);
+                    stack.damage(1, user, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
                     return TypedActionResult.success(user.getStackInHand(hand));
                 }
             }
